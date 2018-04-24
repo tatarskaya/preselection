@@ -1,0 +1,11 @@
+Salad Recipe
+
+ingredients:
+Paprika
+Tomato
+cucumber
+
+Spices:
+Salt
+Pepper
+Dill
