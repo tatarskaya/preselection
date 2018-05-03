@@ -9,13 +9,13 @@ public class OperationWithSets {
     private int countElementForDeleting;
     private Set<Integer> elementsForDeleting;
 
-    protected OperationWithSets(int count, int countElementForDeleting) {
+    public OperationWithSets(int count, int countElementForDeleting) {
         this.count = count;
         this.countElementForDeleting = countElementForDeleting;
         this.elementsForDeleting = initializationSetForDeleting(countElementForDeleting);
     }
 
-    protected void deleteByValue(Set<Integer> set) {
+    public void deleteByValue(Set<Integer> set) {
         MeasureTime measureTime = new MeasureTime();
         int countNotFoundElemnts = 0;
 
@@ -30,7 +30,7 @@ public class OperationWithSets {
         System.out.println(String.format("Time for Delete by Value (%s elements) (%s): %s", countElementForDeleting-countNotFoundElemnts, set.getClass(), measureTime.getDuration()));
     }
 
-    protected void contains(Set<Integer> set) {
+    public void contains(Set<Integer> set) {
         MeasureTime measureTime = new MeasureTime();
         Iterator<Integer> iterator = set.iterator();
 
@@ -43,7 +43,7 @@ public class OperationWithSets {
         System.out.println(String.format("Time for Contains (%s): %s", set.getClass(), measureTime.getDuration()));
     }
 
-    protected void add(Set<Integer> set) {
+    public void add(Set<Integer> set) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(count);
@@ -53,7 +53,7 @@ public class OperationWithSets {
         System.out.println(String.format("Time for Add (%s): %s", set.getClass(), measureTime.getDuration()));
     }
 
-    protected Set<Integer> initializationList(Set<Integer> set) {
+    public Set<Integer> initializationList(Set<Integer> set) {
         Random random = new Random();
         for (int i=0; i<count; i++) {
             set.add(random.nextInt(count));

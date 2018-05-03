@@ -9,7 +9,7 @@ import task2_3.chef.ingredients.Tomato;
 import java.util.Arrays;
 import java.util.List;
 
-public class Kitchen {
+public class KitchenRunner {
 
     public static void main(String[] args) {
         try {

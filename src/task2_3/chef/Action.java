@@ -14,12 +14,12 @@ public class Action {
         this.salad = salad;
     }
 
-    protected List<Ingredient> sortByName() {
+    public List<Ingredient> sortByName() {
         salad.sort(new NameComparator());
         return salad;
     }
 
-    protected HashMap<String, Double> getCaloricityLessValue(double targetCaloricity) {
+    public HashMap<String, Double> getCaloricityLessValue(double targetCaloricity) {
         HashMap<String, Double> caloricityLessValue = new HashMap<>();
         try {
             for (Ingredient ingredient : salad) {
@@ -36,7 +36,7 @@ public class Action {
         return caloricityLessValue;
     }
 
-    protected double getSaladCaloricity() {
+    public double getSaladCaloricity() {
         double saladCaloricity = 0;
         for (Ingredient ingredient : salad) {
             saladCaloricity = saladCaloricity + ingredient.getCaloricity();
@@ -44,11 +44,11 @@ public class Action {
         return saladCaloricity;
     }
 
-    protected void printNameIngredients() {
+    public void printNameIngredients() {
         System.out.println("IngredientJson: " + getIngredientsName());
     }
 
-    protected void printRecipeInFile() {
+    public void printRecipeInFile() {
         try (
             InputStream inputStream = new FileInputStream("src/task2_3/chef/files/inputFile.txt");
             PrintStream outputStream = new PrintStream("src/task2_3/chef/files/outputFile.txt");

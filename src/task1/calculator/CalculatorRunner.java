@@ -3,7 +3,7 @@ package task1.calculator;
 import java.util.Arrays;
 import java.util.List;
 
-public class Runner {
+public class CalculatorRunner {
 
     private static final List<String> CONTINUE_FLAGS = Arrays.asList("No", "no", "N", "n");
 

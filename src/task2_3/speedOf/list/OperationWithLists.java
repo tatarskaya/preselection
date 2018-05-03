@@ -13,7 +13,7 @@ public class OperationWithLists {
     private int countElementForDeleting;
     private List<String> elementsForDeleting;
 
-    protected OperationWithLists(int count, int countElementForDeleting) {
+    public OperationWithLists(int count, int countElementForDeleting) {
         this.count = count;
         this.countElementForDeleting = countElementForDeleting;
         this.elementsForDeleting = initializationListForDeleting(countElementForDeleting);
@@ -23,7 +23,7 @@ public class OperationWithLists {
         this.countElementForDeleting = countElementForDeleting;
     }
 
-    protected void deleteByIndex(List<String> list) {
+    public void deleteByIndex(List<String> list) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(countElementForDeleting);
@@ -40,7 +40,7 @@ public class OperationWithLists {
         System.out.println(String.format("Time for Delete by Index (%s elements) (%s): %s", countElementForDeleting, list.getClass(), measureTime.getDuration()));
     }
 
-    protected int deleteByValue(List<String> list) {
+    public int deleteByValue(List<String> list) {
         MeasureTime measureTime = new MeasureTime();
         int countNotFoundElements = 0;
 
@@ -56,7 +56,7 @@ public class OperationWithLists {
         return countNotFoundElements;
     }
 
-    protected void contains(List<String> list) {
+    public void contains(List<String> list) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(count);
@@ -68,7 +68,7 @@ public class OperationWithLists {
         System.out.println(String.format("Time for Contains (%s): %s", list.getClass(), measureTime.getDuration()));
     }
 
-    protected void add(List<String> list) {
+    public void add(List<String> list) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(count);
@@ -78,14 +78,14 @@ public class OperationWithLists {
         System.out.println(String.format("Time for Add (%s): %s", list.getClass(), measureTime.getDuration()));
     }
 
-    protected List<String> initializationList(List<String> list) {
+    public List<String> initializationList(List<String> list) {
         for (int i=0; i<count; i++) {
             list.add(String.valueOf(i));
         }
         return list;
     }
 
-    protected List<String> initializationListAndShuffle(List<String> list) {
+    public List<String> initializationListAndShuffle(List<String> list) {
         for (int i=0; i<count; i++) {
             list.add(String.valueOf(i));
         }

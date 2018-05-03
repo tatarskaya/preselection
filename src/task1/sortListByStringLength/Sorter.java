@@ -6,15 +6,15 @@ public class Sorter {
 
     private List<String> listForSorting;
 
-    protected List<String> getListForSorting() {
+    public List<String> getListForSorting() {
         return listForSorting;
     }
 
-    protected void setListForSorting(List<String> listForSorting) {
+    public void setListForSorting(List<String> listForSorting) {
         this.listForSorting = listForSorting;
     }
 
-    protected void sorting() {
+    public void sorting() {
         String previous;
         String current;
         String tmp;
@@ -27,12 +27,7 @@ public class Sorter {
                 previous = listForSorting.get(i - 1);
                 current = listForSorting.get(i);
                 try {
-                    if (previous.length() > current.length()) {
-                        tmp = previous;
-                        listForSorting.set(i - 1, current);
-                        listForSorting.set(i, tmp);
-                        countReversal++;
-                    }
+                    countReversal = swapElements(previous, current, countReversal, i);
                 }
                 catch (NullPointerException e) {
                     System.out.println("The list is contained Null element. The sorting is impossible.");
@@ -41,5 +36,16 @@ public class Sorter {
             }
             itemsToVerify--;
         } while (countReversal > 0);
+    }
+
+    private int swapElements(String previous, String current, int countReversal, int i) {
+        String tmp;
+        if (previous.length() > current.length()) {
+            tmp = previous;
+            listForSorting.set(i - 1, current);
+            listForSorting.set(i, tmp);
+            countReversal++;
+        }
+        return countReversal;
     }
 }

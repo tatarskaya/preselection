@@ -9,7 +9,7 @@ import task4.json.IngredientJson;
 import java.util.Arrays;
 import java.util.List;
 
-public class Kitchen {
+public class KitchenRunner {
 
     public static void main(String[] args) {
         List<Class> ingredientsName = Arrays.asList(Tomato.class, Paprika.class, Cucumber.class);

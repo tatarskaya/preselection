@@ -8,13 +8,13 @@ public class OperationWithMaps {
     private int count;
     private int countElementForDeleting;
 
-    protected OperationWithMaps(int count, int countElementForDeleting) {
+    public OperationWithMaps(int count, int countElementForDeleting) {
         this.count = count;
         this.countElementForDeleting = countElementForDeleting;
         initializationListForDeleting(countElementForDeleting);
     }
 
-    protected void deleteByIndex(Map<Integer, String> map) {
+    public void deleteByIndex(Map<Integer, String> map) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(countElementForDeleting);
@@ -26,7 +26,7 @@ public class OperationWithMaps {
         System.out.println(String.format("Time for Delete by Key (%s elements) (%s): %s", countElementForDeleting, map.getClass(), measureTime.getDuration()));
     }
 
-    protected void containsValue(Map<Integer, String> map) {
+    public void containsValue(Map<Integer, String> map) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(count);
@@ -38,7 +38,7 @@ public class OperationWithMaps {
         System.out.println(String.format("Time for Contains Value (%s): %s", map.getClass(), measureTime.getDuration()));
     }
 
-    protected void containsKey(Map<Integer, String> map) {
+    public void containsKey(Map<Integer, String> map) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(count);
@@ -50,7 +50,7 @@ public class OperationWithMaps {
         System.out.println(String.format("Time for Contains Key (%s): %s", map.getClass(), measureTime.getDuration()));
     }
 
-    protected void add(Map<Integer, String> map) {
+    public void add(Map<Integer, String> map) {
         MeasureTime measureTime = new MeasureTime();
 
         measureTime.setCount(count);
@@ -60,14 +60,14 @@ public class OperationWithMaps {
         System.out.println(String.format("Time for Add (%s): %s", map.getClass(), measureTime.getDuration()));
     }
 
-    protected Map<Integer, String> initializationMap(Map<Integer, String> map) {
+    public Map<Integer, String> initializationMap(Map<Integer, String> map) {
         for (int i=0; i<count; i++) {
             map.put(i, String.valueOf(i));
         }
         return map;
     }
 
-    protected Map<Integer, String> initializationMapAndShuffle(Map<Integer, String> map) {
+    public Map<Integer, String> initializationMapAndShuffle(Map<Integer, String> map) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i=0; i<count; i++) {
             list.add(i);

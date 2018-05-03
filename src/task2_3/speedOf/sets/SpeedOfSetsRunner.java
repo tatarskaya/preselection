@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class SpeedOfSets {
+public class SpeedOfSetsRunner {
 
     public static void main(String[] args) {
 

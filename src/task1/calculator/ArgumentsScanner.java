@@ -8,11 +8,11 @@ public class ArgumentsScanner {
 
     private Scanner input = new Scanner(System.in);
 
-    protected Scanner getInput() {
+    public Scanner getInput() {
         return input;
     }
 
-    protected void inputFirstArgument(Arguments arguments) {
+    public void inputFirstArgument(Arguments arguments) {
         System.out.print("Input a first argument: ");
         String inputString;
         BigDecimal arg1;
@@ -34,7 +34,7 @@ public class ArgumentsScanner {
         } while (firstArgumentProceed);
     }
 
-    protected void inputSecondArgument(Arguments arguments) {
+    public void inputSecondArgument(Arguments arguments) {
         String inputString;
         BigDecimal arg2;
         boolean secondArgumentProceed = false;
@@ -61,7 +61,7 @@ public class ArgumentsScanner {
         } while (secondArgumentProceed);
     }
 
-    protected void inputArithmeticOperation(Arguments arguments) {
+    public void inputArithmeticOperation(Arguments arguments) {
         boolean arithmetic_operation_proceed = true;
         String operation = "";
         System.out.print("Input an arithmetic operation (+, -, *, /): ");

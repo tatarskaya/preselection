@@ -10,35 +10,35 @@ public class Arguments {
     private String arithmeticOperation;
     private BigDecimal result;
 
-    protected BigDecimal getArg1() {
+    public BigDecimal getArg1() {
         return arg1;
     }
 
-    protected void setArg1(BigDecimal arg1) {
+    public void setArg1(BigDecimal arg1) {
         this.arg1 = arg1;
     }
 
-    protected BigDecimal getArg2() {
+    public BigDecimal getArg2() {
         return arg2;
     }
 
-    protected void setArg2(BigDecimal arg2) {
+    public void setArg2(BigDecimal arg2) {
         this.arg2 = arg2;
     }
 
-    protected String getArithmeticOperation() {
+    public String getArithmeticOperation() {
         return arithmeticOperation;
     }
 
-    protected void setArithmeticOperation(String arithmeticOperation) {
+    public void setArithmeticOperation(String arithmeticOperation) {
         this.arithmeticOperation = arithmeticOperation;
     }
 
-    protected BigDecimal getResult() {
+    public BigDecimal getResult() {
         return result;
     }
 
-    protected void setResult(BigDecimal result) {
+    public void setResult(BigDecimal result) {
         this.result = result;
     }
 
