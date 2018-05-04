@@ -1,9 +1,9 @@
 Salad Recipe
 
 ingredients:
+Cucumber
 Paprika
 Tomato
-cucumber
 
 Spices:
 Salt

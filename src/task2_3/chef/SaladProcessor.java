@@ -7,10 +7,10 @@ import task2_3.chef.ingredients.Ingredient;
 import java.io.*;
 import java.util.*;
 
-public class Action {
+public class SaladProcessor {
     private List<Ingredient> salad;
 
-    public Action(List<Ingredient> salad) {
+    public SaladProcessor(List<Ingredient> salad) {
         this.salad = salad;
     }
 
@@ -45,12 +45,28 @@ public class Action {
     }
 
     public void printNameIngredients() {
-        System.out.println("IngredientJson: " + getIngredientsName());
+        System.out.println(getIngredientsName());
     }
 
-    public void printRecipeInFile() {
+    public byte[] readSpicesFromFile() {
+        byte[] spiceByte = null;
         try (
-            InputStream inputStream = new FileInputStream("src/task2_3/chef/files/inputFile.txt");
+                InputStream inputStream = new FileInputStream("src/task2_3/chef/files/inputFile.txt");
+        ) {
+            int size = inputStream.available();
+            spiceByte = new byte[size];
+            for (int i = 0; i < size; i++) {
+                inputStream.read(spiceByte);
+            }
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        return spiceByte;
+    }
+
+    public void readSpicesPrintRecipeInFile() {
+        try (
             PrintStream outputStream = new PrintStream("src/task2_3/chef/files/outputFile.txt");
         ) {
             outputStream.print("Salad Recipe\n\n");
@@ -60,12 +76,13 @@ public class Action {
             }
             outputStream.print("\n");
             outputStream.print("Spices:\n");
-            int size = inputStream.available();
-            for (int i = 0; i < size; i++) {
-                outputStream.write(inputStream.read());
-            }
+            outputStream.write(readSpicesFromFile());
         }
         catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        catch (NullPointerException ex) {
+            System.out.println("It is impossible to read Spices form file");
             ex.printStackTrace();
         }
     }

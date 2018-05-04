@@ -14,22 +14,22 @@ public class KitchenRunner {
     public static void main(String[] args) {
         try {
             List<Ingredient> salad = Arrays.asList(new Paprika(), new Tomato(), new Cucumber());
-            Action action = new Action(salad);
+            SaladProcessor saladProcessor = new SaladProcessor(salad);
 
             System.out.println("Salad:");
-            action.printNameIngredients();
+            saladProcessor.printNameIngredients();
 
-            System.out.println("Caloricity: " + action.getSaladCaloricity() + " Kkal");
+            System.out.println("Caloricity of Salad: " + saladProcessor.getSaladCaloricity() + " Kkal");
 
-            salad = action.sortByName();
-            action = new Action(salad);
+            salad = saladProcessor.sortByName();
+            saladProcessor = new SaladProcessor(salad);
             System.out.println("Sorted salad by Name : ");
-            action.printNameIngredients();
+            saladProcessor.printNameIngredients();
 
             Double caloricityValue = 30.0;
-            System.out.println(String.format("Vegitables with caloricity less %s Kkal: %s", caloricityValue, action.getCaloricityLessValue(caloricityValue)));
+            System.out.println(String.format("Vegitables with caloricity less %s Kkal: %s", caloricityValue, saladProcessor.getCaloricityLessValue(caloricityValue)));
 
-            action.printRecipeInFile();
+            saladProcessor.readSpicesPrintRecipeInFile();
 
         } catch (NegativeCaloricityException | IllegalArgumentException ex) {
             ex.printStackTrace();

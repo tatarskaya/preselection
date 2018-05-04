@@ -5,6 +5,6 @@ import task2_3.chef.exceptions.NegativeCaloricityException;
 public class Cucumber extends Ingredient {
 
     public Cucumber () throws NegativeCaloricityException {
-        super("cucumber", "Green", "Belarus", 15);
+        super("Cucumber", "Green", "Belarus", 15);
     }
 }
