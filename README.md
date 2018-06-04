@@ -1,4 +1,4 @@
-master
+master (update readme)
 
 For the task 1 (part 1) run \src\task1\calculator\CalculatorRunner.java
 For the task 1 (part 2) run \src\task1\sortListByStringLength\SortListByStringLengthRunner.java
