@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>preselection</name>
-    <url>https://github.com/tatarskaya.preselection.git</url>
+    <url>https://github.com.tatarskaya.preselection.git</url>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
